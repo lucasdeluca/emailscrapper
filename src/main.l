@@ -1,11 +1,14 @@
-
 %{
+
 #include <stdio.h>
 int i=0;
+
 %}
 
 
 %%
+
+
 [^ \@\t\n\.\-][A-Za-z0-9\.\-\_]*[^ \.\-]@[^ \.\-][A-Za-z0-9\.]*[^ \-]$ {
 	printf("%s\n", yytext);
 }
@@ -25,18 +28,14 @@ printf ("\n");
 	printf("%s\n", yytext);
 }
 
-
-
-
-
-
 \n ;
 . ;
 
+
 %%
+
 
 int main() {
   yylex();
-//printf("\n");
   return 0;
 }
